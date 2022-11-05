@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background: #121214;
+  background-image: url(./background.svg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+body * {
+  font-family: 'Roboto', sans-serif;
+}
+
+#app {
+  width: fit-content;
+  margin: auto;
+  padding-top: 52px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 63px;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  padding: 32px 23px;
+  text-align: center;
+  background: #1A1F1B;
+  border-bottom: 3px solid #047C3F;
+  border-radius: 6px;
+}
+
+.card h2 {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px 16px;
+  border: 1px solid #047C3F;
+  border-radius: 6px;
+
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 53px;
+
+  color: #F7DD43;
+}
+
+.card h2 span {
+  color: #E1E1E6;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 270px;
+}
+
+.card ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.card ul li + li {
+  padding-top: 48px;
+  border-top: 1px solid #323238;
+}
+
+.card ul li strong {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 125%;
+  color: #E1E1E6;
+  position: relative;
+}
+
+.card ul li strong span {
+  color: #F7DD43;
+  font-size: 20px;
+  position: absolute;
+  top: -2.3rem;
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%);
+}
+
+.card ul li strong:hover,
+.card ul li img:hover,
+.card h2:hover {
+  transform: scale(1.1);
+}
+
+.card ul li strong,
+.card ul li img, 
+.card h2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card {
+  animation: appear 2.2s;
+}
+
+/* Tooltip Player1 */
+
+.player1 {
+  position: relative;
+}
+
+.player1::before,
+.player1::after {
+  --scale: 0;
+  --tooltip-color: #030304;
+  position:absolute;
+  top: -.25rem;
+  left: 50% ;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+  transition: 250ms transform;
+  transform-origin: bottom center;
+}
+
+.player1::before{
+  --translate-y: -100%;
+  content: attr(data-tooltip);
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: .4rem;
+  text-align: center;
+  background: var(--tooltip-color);
+  color:#E1E1E6;
+}
+
+.player1:hover::before,
+.player1:hover::after {
+  --scale: 1;
+}
+
+.player1:hover::after {
+  content: '';
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}
+
+/* Tooltip Player2 */
+
+.player2 {
+  position: relative;
+}
+
+.player2::before,
+.player2::after {
+  --scale: 0;
+  --tooltip-color: #030304;
+  position:absolute;
+  top: -.25rem;
+  left: 50% ;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+  transition: 250ms transform;
+  transform-origin: bottom center;
+}
+
+.player2::before{
+  --translate-y: -100%;
+  content: attr(data-tooltip);
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: .4rem;
+  text-align: center;
+  background: var(--tooltip-color);
+  color:#E1E1E6;
+}
+
+.player2:hover::before,
+.player2:hover::after {
+  --scale: 1;
+}
+
+.player2:hover::after {
+  content: '';
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}
+
+
+@keyframes appear {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+} 
+
+footer {
+  display: flex;
+  margin: 50px 0 15px 0;
+  justify-content: center;
+}
+
+footer button {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.fa-whatsapp {
+  color: #15db78;
+  font-size:40px;
+  text-shadow: 0 0 5px #15db78,
+              0 0 20px #15db78,
+              0 0 60px #15db78,
+              0 0 150px #15db78;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-whatsapp:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 1000px) {
+  body {
+    background-size: cover;
+  }
+}
+
+@media (min-width: 700px) {
+  #cards {
+    max-width: 670px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

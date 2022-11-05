@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendário do Luiz</title>
+    
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/alert.css" />
+
+    <link rel="icon" href="./assets/icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap"
+      rel="stylesheet"/>
+
+    <script src="https://kit.fontawesome.com/844e61dc76.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="alert show">
+        <p class="message"><span>Dica:</span> clique na bandeira para ver o nome do país.</p>
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <header>
+        <img src="./assets/logo.svg" alt="Logo da NLW" />
+      </header>
+      <main id="cards"></main>
+      <footer>
+        <button class="button" data-sharer="whatsapp" data-title="Dê uma olhada nesse calendário da Copa!" data-url="https://2022-luizalexandrepaiva.github.io/world-cup-calendar/">
+          <i class="fa-brands fa-whatsapp"></i>
+        </button>
+      </footer>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
